@@ -1,0 +1,13 @@
+CREATE TABLE Curso (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Nome NVARCHAR(100) NOT NULL,
+    CargaHoraria INT NOT NULL
+);
+
+CREATE TABLE Matricula (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    IdCurso INT NOT NULL,
+    NomeAluno NVARCHAR(200) NOT NULL,
+
+    FOREIGN KEY (IdCurso) REFERENCES Curso(Id)
+);
